@@ -14,9 +14,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-
-
-        ''' crear la tabla BankMOvement con columnas '''
         migrations.CreateModel(
             name='BankMovement',
             fields=[
@@ -29,8 +26,6 @@ class Migration(migrations.Migration):
                 'ordering': ['-fecha'],
             },
         ),
-
-        ''' crear la tabla Collection con columnas '''
         migrations.CreateModel(
             name='Collection',
             fields=[
@@ -44,8 +39,6 @@ class Migration(migrations.Migration):
                 'ordering': ['-mes_cobro'],
             },
         ),
-
-        ''' crear la tabla BPayment con columnas '''
         migrations.CreateModel(
             name='Payment',
             fields=[
