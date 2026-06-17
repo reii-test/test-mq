@@ -43,10 +43,9 @@ export default function HomePage(): JSX.Element {
   return (
     <Wrapper>
       <Card>
-        <Title>Prueba Tecnica Junior Fullstack</Title>
+        <Title>Prueba Tecnica</Title>
         <Text>
-          Este starter incluye setup minimo para backend y frontend. Tu trabajo inicia en la
-          pantalla de tareas.
+          Ir a task para realizar la conciliacion de pagos y movimientos
         </Text>
         <TasksLink href="/tasks">Ir a /tasks</TasksLink>
       </Card>

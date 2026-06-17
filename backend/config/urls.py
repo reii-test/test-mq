@@ -10,5 +10,5 @@ def health_check(_: object) -> JsonResponse:
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("health/", health_check, name="health-check"),
-    path("api/tasks/", include("tasks.urls")),
+    path("api/", include("tasks.urls")),
 ]

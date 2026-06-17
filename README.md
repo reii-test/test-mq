@@ -24,7 +24,29 @@ uses IA, pero evaluamos tu pensamiento crítico sobre lo que produce.
 
 ## Setup
 
-### 1) Base de datos
+### Docker
+
+con docker instalado:
+
+```bash
+docker compose up --build
+```
+
+Levanta PostgreSQL, backend (con migraciones y datos de prueba) y frontend automáticamente.
+
+- Frontend: `http://localhost:3000/tasks`
+- Backend: `http://localhost:8000`
+
+Para resetear la BD y recargar datos de prueba:
+
+```bash
+docker compose down -v
+docker compose up --build
+```
+
+### Opción B — Manual
+
+#### 1) Base de datos
 
 ```bash
 docker compose --file "docker-compose.yml" up -d
