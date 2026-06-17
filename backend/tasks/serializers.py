@@ -73,17 +73,16 @@ validaciones son:
 '''  
 class PaymentInputSerializer(serializers.Serializer):
 
-    allocations = PaymentItemSerializer(many=True)
+    payments = PaymentItemSerializer(many=True)
 
-    def validate_allocations(self, allocations):
-        if not allocations:
+    def validate_payments(self, payments):
+        if not payments:
             raise serializers.ValidationError("Debe incluir al menos un cobro")
-        ids = [a["collection_id"] for a in allocations]
+        ids = [p["collection_id"] for p in payments]
         if len(ids) != len(set(ids)):
             raise serializers.ValidationError(
                 "No puede abonar dos veces al mismo cobro en un mismo request"
             )
-
 
         existing_ids = set(
             Collection.objects.filter(id__in=ids).values_list("id", flat=True)
@@ -94,4 +93,4 @@ class PaymentInputSerializer(serializers.Serializer):
                 f"Los siguientes cobros no existen: {sorted(missing)}"
             )
 
-        return allocations
+        return payments
